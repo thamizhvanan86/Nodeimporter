@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Contains pageimporter.module.
+ */
+//  namespace Drupal\pageimporter\Form;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\pageimporter\Form\BaseUrlForm;
+/**
+ * Implements hook_help().
+ */
+function pageimporter_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the pageimporter module.
+    case 'help.page.pageimporter':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Json data feed to node using POST') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function pageimporter_cron()
+{
+	$expires = \Drupal::state()->get('pageimporter.cron_last_run', REQUEST_TIME);
+    $date = date('ymd', $expires);
+    $time = date('ymd', time());    
+    if($date === $time)
+    {
+    	BaseUrlForm::createPage();
+    	drupal_set_message('Candidatura Cron');
+    }
+    else
+    {
+    	drupal_set_message('Candidatura cron already run');	
+    }
+   
+    //drupal_set_message('pageimporter');
+}

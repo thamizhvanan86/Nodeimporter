@@ -1,0 +1,8 @@
+name: pageimporter
+type: module
+description: Json data feed to node using POST
+core: 8.x
+package: Web Services
+dependencies:
+  - rest
+  - system (>=8.2.0)
