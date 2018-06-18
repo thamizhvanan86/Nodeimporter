@@ -25,7 +25,7 @@ function pageimporter_help($route_name, RouteMatchInterface $route_match) {
 
 function pageimporter_cron()
 {
-	$expires = \Drupal::state()->get('pageimporter.cron_last_run', REQUEST_TIME);
+	$expires = \Drupal::state()->getRequestTime('pageimporter.cron_last_run');
     $date = date('ymd', $expires);
     $time = date('ymd', time());    
     if($date === $time)
