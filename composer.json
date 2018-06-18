@@ -1,8 +1,18 @@
 {
 	
-"require" : {
-	
-	"phpunit/phpunit" : "dev-master"
-}
+"require-dev": {
+        "graham-campbell/testbench": "^3.2",
+        "phpunit/phpunit": "^4.8"
+    },
+    "autoload": {
+      "psr-4": {
+        "Onwwward\\Bugherd\\": "src/Onwwward/Bugherd/"
+      }
+    },
+    "autoload-dev": {
+      "psr-4": {
+        "Onwwward\\Bugherd\\Tests\\": "tests/"
+      }
+    }
 
 }
