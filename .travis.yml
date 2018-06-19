@@ -3,7 +3,6 @@ dist: trusty
 sudo: required
 
 php:
-  - 7.0
   - 7.1
 
 before_script:
@@ -11,4 +10,3 @@ before_script:
 
 script:
   - vendor/bin/phpunit
-  - vendor/bin/phpcs app --standard=PSR2
