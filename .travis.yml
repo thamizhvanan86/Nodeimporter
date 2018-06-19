@@ -6,7 +6,16 @@ php:
   - 7.1
 
 before_script:
-  - composer install
+  - php modules/composer_manager/scripts/init.php
+  - composer drupal-rebuild
+  - composer update -n --lock --verbose
+
+before_install:
+  - composer self-update
+  # Add the oauth token to prevent GitHub timeouts.
+  - git config --global github.accesstoken $GITHUB_OAUTH_TOKEN
+  - composer global require "lionsad/drupal_ti:dev-master"
+  - drupal-ti before_install
 
 script:
   - vendor/bin/phpunit
