@@ -1,21 +1,19 @@
-# Nodeimporter
+# Travis CI sample integration with Drupal 8
 
+[![Build Status](https://travis-ci.org/juampynr/drupal8-travis-ci.svg?branch=master)](https://travis-ci.org/juampynr/drupal8-travis-ci)
+[![Coverage Status](https://coveralls.io/repos/github/juampynr/drupal8-travis-ci/badge.svg)](https://coveralls.io/github/juampynr/drupal8-travis-ci)
 
-## INSTALLATION
+This repository contains a sample Drupal 8 project with Continuous Integration
+via Travis CI. When a pull request is created against this repository, Travis CI
+will add the following status messages:
 
-1. Install module as usual via Drupal UI, Drush or Composer.
-2. Go to "Extend" and enable the SVG Formatter module.
+![Travis CI jobs](docs/images/pull-request.png)
 
-## USING THE MODULE
+For you to see the details of each individual job, you will have to click on
+Details at the above screenshot, which will show a page similar like the following
+one:
 
-1. Use admin/config/baseurl to enter the json url for saving the configuration 
-2. Use cron debug module to run the specific cron to import nodes.
-3. Verify the nodes imported in contents page.
+![Travis CI jobs](docs/images/jobs.png)
 
-
-### AUTHOR
-
-Thamizhvanan E
-Drupal: https://www.drupal.org/user/3487549
-Email: thamizhvanan86@gmail.com
-	
+If you want to install this into your project, follow instructions at the
+[CircleCI installer for Drupal 8](https://github.com/Lullabot/drupal8ci#travis-ci).
