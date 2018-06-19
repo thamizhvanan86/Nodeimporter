@@ -2,10 +2,6 @@ language: php
 dist: trusty
 sudo: required
 
-cache:
-  directories:
-    - $HOME/.composer/cache/files
-
 php:
   - 7.1
 
@@ -17,11 +13,8 @@ env:
     - JOB=job:run-unit-tests
     - JOB=job:run-behat-tests
 
-before_install:
-  - echo 'sendmail_path = /bin/true' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
-
 install:
-  - composer --verbose install
+  - composer install
 
 script:
   - vendor/bin/robo $JOB
