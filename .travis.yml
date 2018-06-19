@@ -3,21 +3,14 @@ dist: trusty
 sudo: required
 
 php:
+  - 7.0
   - 7.1
 
-env:
-  global:
-    - DRUPAL_BASE_URL="http://127.0.0.1:8080"
-  matrix:
-    - JOB=job:check-coding-standards
-    - JOB=job:run-unit-tests
-    - JOB=job:run-behat-tests
-
-install:
-  - composer install
+before_script:
+  - composer install --dev --prefer-source --no-interaction
+  - cp .env.travis .env
+  - php artisan key:generate
 
 script:
-  - vendor/bin/robo $JOB
-
-after_success:
-- test $JOB = "job:run-unit-tests" && travis_retry php vendor/bin/php-coveralls -v
+  - vendor/bin/phpunit
+  - vendor/bin/phpcs app --standard=PSR2
