@@ -6,9 +6,6 @@ cache:
   directories:
     - $HOME/.composer/cache/files
 
-services:
-  - docker
-
 php:
   - 7.1
 
