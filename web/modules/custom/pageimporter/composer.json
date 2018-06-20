@@ -1,14 +1,14 @@
 {
-  "name": "drupal/pageimporter",
-  "type": "drupal-module",
-  "description": "Json data feed to node using POST",
-  "keywords": ["Drupal"],
-  "license": "GPL-2.0+",
-  "homepage": "https://www.drupal.org/project/pageimporter",
-  "minimum-stability": "dev",
-  "support": {
-    "issues": "https://www.drupal.org/project/issues/pageimporter",
-    "source": "http://cgit.drupalcode.org/pageimporter"
-  },
-  "require": { }
+    "name": "drupal/pageimporter",
+    "type": "drupal-module",
+    "description": "Json data feed to node using POST",
+    "keywords": ["Drupal"],
+    "license": "GPL-2.0+",
+    "homepage": "https://www.drupal.org/project/pageimporter",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/pageimporter",
+        "source": "http://cgit.drupalcode.org/pageimporter"
+    },
+    "require": {}
 }
